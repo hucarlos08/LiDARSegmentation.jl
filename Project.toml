@@ -2,3 +2,7 @@ name = "LiDARSegmentation"
 uuid = "f97a7ca0-0b86-43d0-87eb-8c62559aa0ed"
 authors = ["Hugo Carlos Mtz <hcarlos@centrogeo.edu.mx>"]
 version = "0.1.0"
+
+[deps]
+FileIO = "5789e2e9-d7fb-5bc7-8068-2c6fae9b9549"
+LasIO = "570499db-eae3-5eb6-bdd5-a5326f375e68"
