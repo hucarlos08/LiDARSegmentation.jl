@@ -1,7 +1,8 @@
 module LiDARSegmentation
 
-export greet
+export segmentation
 
-greet() = print("Hello World!")
+segmentation() = println("Aqui segmentamos")
+
 
 end # module LiDARSegmentation
