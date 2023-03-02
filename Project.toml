@@ -1,0 +1,4 @@
+name = "LiDARSegmentation"
+uuid = "f97a7ca0-0b86-43d0-87eb-8c62559aa0ed"
+authors = ["Hugo Carlos Mtz <hcarlos@centrogeo.edu.mx>"]
+version = "0.1.0"
