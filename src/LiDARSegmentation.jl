@@ -1,8 +1,12 @@
 module LiDARSegmentation
 
-export segmentation
+export SphericalProjection
+export get_point_coordinates
+export get_spherical_coordinates
+export create_spherical_image
 
-segmentation() = println("Aqui segmentamos")
+include("LiDARProjections.jl")
+
 
 
 end # module LiDARSegmentation
