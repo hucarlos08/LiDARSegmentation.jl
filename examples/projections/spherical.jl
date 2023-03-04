@@ -8,7 +8,7 @@ using StaticArrays
 using LiDARSegmentation
 
 # Load the point cloud from a file
-path="data/Cloud.las"
+path="data/test_cloud.las"
 
 header, cloud = load(path, mmap=true)
 
@@ -17,7 +17,7 @@ config = Dict(
               "num_lasers" => 64,
               "horizontal_fov" => deg2rad(0.35),
               "fov_up" => deg2rad(2.0),
-              "fov_down" => deg2rad(-24.0),
+              "fov_down" => deg2rad(-24.8),
             )
 
 # Create an instance of the SphericalConversion struct
@@ -25,8 +25,9 @@ sp = SphericalProjection{Float64}(config)
 
 
 # Set origin and create image
-origin = SVector{3, Float64}([0,0,0])
-spherical_images = create_spherical_image(header, cloud, sp, origin);
+origin = SVector{3, Float64}([0., 0.0, 0.0])
+origin *= 1.0e-5
+spherical_images = create_spherical_image(header, cloud, sp, [:x,:y,:z], origin);
 
 
 # Scale positions
@@ -43,3 +44,13 @@ im = Gray.(map(scaleminmax(header.z_min, header.z_max), spherical_images[:,:,3])
 # Scale range to [0, 1] and create image
 f = takemap(scaleminmax, spherical_images[:,:,end])
 im_range = Gray.(map(f,  spherical_images[:,:,end]))
+
+f = takemap(scaleminmax, spherical_images[:,:,end-2])
+img_x = Gray.(map(f,  spherical_images[:,:,end-2]))
+
+
+properties = collect(fieldnames(LasPoint2))
+
+for (i, prop) in  enumerate(properties)
+  println(prop, ' ', i)
+end
