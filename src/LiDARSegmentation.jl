@@ -8,5 +8,10 @@ export create_spherical_image
 include("LiDARProjections.jl")
 
 
+export scale_min_max
+export scale_min_max!
+
+include("aux.jl")
+
 
 end # module LiDARSegmentation

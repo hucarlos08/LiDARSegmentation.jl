@@ -4,7 +4,9 @@ authors = ["Hugo Carlos Mtz <hcarlos@centrogeo.edu.mx>"]
 version = "0.1.0"
 
 [deps]
+BenchmarkTools = "6e4b80f9-dd63-53aa-95a3-0cdb28fa8baf"
 FileIO = "5789e2e9-d7fb-5bc7-8068-2c6fae9b9549"
 LasIO = "570499db-eae3-5eb6-bdd5-a5326f375e68"
 LinearAlgebra = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
+LoopVectorization = "bdcacae8-1622-11e9-2a5c-532679323890"
 StaticArrays = "90137ffa-7385-5640-81b9-e52037218182"
